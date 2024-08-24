@@ -4,6 +4,9 @@ defmodule AuctionWeb.PageController do
   def home(conn, _params) do
     # The home page is often custom made,
     # so skip the default app layout.
-    render(conn, :home, layout: false)
+
+    items = Auction.list_items()
+    # render(conn, :home, layout: false, items: items)
+    render(conn, :home, items: items)
   end
 end
