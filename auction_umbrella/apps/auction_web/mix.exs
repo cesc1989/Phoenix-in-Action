@@ -57,7 +57,8 @@ defmodule AuctionWeb.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:bandit, "~> 1.5"},
-      {:auction, in_umbrella: true}
+      {:auction, in_umbrella: true},
+      {:phoenix_ecto, "4.6.2"}
     ]
   end
 

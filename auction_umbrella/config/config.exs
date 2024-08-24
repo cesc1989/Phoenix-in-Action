@@ -46,6 +46,19 @@ config :tailwind,
 
 config :phoenix, :json_library, Jason
 
+# config :auction, Auction.Repo,
+#   username: "francisco",
+#   password: "",
+#   database: "auction_prueba",
+#   hostname: "localhost"
+
+# config :auction, ecto_repos: [Auction.Repo]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
+
+# Estos son los envs por entorno.
 import_config "#{config_env()}.exs"
+
+# De esta forma me traigo los configs de cada subproyecto
+import_config "../apps/auction/config/config.exs"
