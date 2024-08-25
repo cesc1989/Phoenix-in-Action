@@ -15,6 +15,6 @@ trim_trailing_whitespace = true
 charset = utf-8
 
 # 2 space indentation
-[*.{js,ex,css,scss,rake,tt}]
+[*.{js,ex,exs,css,scss,rake,tt}]
 indent_style = space
 indent_size = 2
