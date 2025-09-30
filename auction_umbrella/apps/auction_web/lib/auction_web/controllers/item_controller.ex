@@ -10,4 +10,21 @@ defmodule AuctionWeb.ItemController do
     item = Auction.get_item(id)
     render(conn, :show, item: item)
   end
+
+  def new(conn, _params) do
+    item = Auction.new_item()
+    render(conn, :new, item: item)
+  end
+
+  def create(conn, %{"item" => item_params}) do
+    case Auction.insert_item(item_params) do
+      {:ok, item} ->
+        conn
+        |> put_flash(:info, "Item created successfully")
+        |> redirect(to: ~p"/items/#{item}")
+
+      {:error, item} ->
+        render(conn, :new, item: item)
+    end
+  end
 end
