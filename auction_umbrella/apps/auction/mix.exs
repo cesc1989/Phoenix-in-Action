@@ -28,8 +28,8 @@ defmodule Auction.MixProject do
     [
       {:ecto_sql, "3.12.0"},
       {:postgrex, "0.19.1"},
-      {:comeonin, "~> 4.1"},
-      {:pbkdf2_elixir, "~> 0.12"}
+      {:comeonin, "~> 5.3"},
+      {:pbkdf2_elixir, "~> 2.0"}
     ]
   end
 end
