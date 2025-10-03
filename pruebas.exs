@@ -1,3 +1,5 @@
+# Pruebas de Item
+
 Auction.insert_item(
   %{
     title: "Hola mundo 2",
@@ -8,7 +10,6 @@ Auction.insert_item(
 
 item = Auction.get_item(3)
 
-
 Auction.Item.changeset(
   %Auction.Item{},
   %{
@@ -17,7 +18,6 @@ Auction.Item.changeset(
     ends_at: ~N[2024-12-25 00:00:00]
   }
 )
-
 
 item
 |> Auction.Item.changeset(
@@ -28,3 +28,16 @@ item
   }
 )
 |> Auction.Repo.update()
+
+
+# Pruebas de User
+
+Auction.User.changeset(
+  %Auction.User{},
+  %{username: "geo", email_address: "marikiti@gmail.com", password: "polvorete"}
+)
+
+Auction.User.changeset_with_password(
+  %Auction.User{},
+  %{username: "geo", email_address: "marikiti@gmail.com", password: "polvorete", password_confirmation: "polvorete"}
+)
