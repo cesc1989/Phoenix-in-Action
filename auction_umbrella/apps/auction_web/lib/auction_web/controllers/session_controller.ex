@@ -21,6 +21,9 @@ defmodule AuctionWeb.SessionController do
   end
 
   def delete(conn, _params) do
-    # later
+    conn
+    |> clear_session()
+    |> configure_session(drop: true)
+    |> redirect(to: ~p"/items")
   end
 end
